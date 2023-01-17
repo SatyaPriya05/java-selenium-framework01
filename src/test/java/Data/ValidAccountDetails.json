@@ -1,0 +1,33 @@
+[
+  {
+	"fname":"satyapriya",
+	"lname":"Manchala",
+	"email":"lucky123@gmail.com",
+	"pass":"Lucky@555"
+				
+  },
+  
+  {
+	"fname":"Ravi",
+	"lname":"Kumar",
+	"email":"loony1234@gmail.com",
+	"pass":"Loony@555"
+				
+  },
+  
+  {
+	"fname":"Lasya",
+	"lname":"Kashyap",
+	"email":"sweety123@gmail.com",
+	"pass":"Sweety@555"
+				
+  },
+  
+  {
+	"fname":"Swathi",
+	"lname":"Reddy",
+	"email":"swoony123@gmail.com",
+	"pass":"Swathi@55"
+				
+  }
+]
