@@ -195,7 +195,7 @@ public class BaseTest {
 	//driver.close();
 			//driver.switchTo().window(driver.getWindowHandle());
 			//driver.switchTo().defaultContent();
-	@AfterMethod
+	@AfterMethod(alwaysRun=true)
 	public  void tearDown()
 	{
 		driver.close();

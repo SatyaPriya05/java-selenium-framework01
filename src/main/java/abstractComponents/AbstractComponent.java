@@ -50,19 +50,5 @@ public class AbstractComponent {
 		a.moveToElement(findBy).build().perform();
 	}
 	
-	public WebElement getElement(final By locator) {
-		FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(10))
-				.pollingEvery(Duration.ofSeconds(3)).ignoring(NoSuchElementException.class);
- 
-		WebElement element = wait.until(new Function<WebDriver, WebElement>() {
- 
-			@Override
-			public WebElement apply(WebDriver arg0) {
-				return arg0.findElement(locator);
-			}
- 
-		});
- 
-		return element;
-	}
+	
 }

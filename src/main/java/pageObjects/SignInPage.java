@@ -33,17 +33,6 @@ public class SignInPage extends AbstractComponent{
 	@FindBy(id="pass-error")
 	WebElement blankPasswordError;
 	
-	
-	
-	//public WelcomePage SignInSubmit(String email,String pass)
-	//public WelcomePage invalid_SignInSubmit(String email,String pass)
-	//{	
-	//emailId.sendKeys(Random_Number_Generator() + "." + Random_Number_Generator() + "user@email.com");
-	//emailId.sendKeys(email);
-	//password.sendKeys(pass);
-	//submit.click();
-	//return  new WelcomePage(driver);
-	//}
 		
 	public WelcomePage SignInSubmit(String email,String pass)
 	{	
