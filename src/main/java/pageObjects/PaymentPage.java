@@ -35,7 +35,7 @@ public class PaymentPage extends AbstractComponent{
 	
 	public OrderSuccessPage click_PlaceOrder() throws InterruptedException
 	{
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.elementToBeClickable(placeOrder));
 		placeOrder.click();
