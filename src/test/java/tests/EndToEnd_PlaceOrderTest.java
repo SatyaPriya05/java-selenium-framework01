@@ -21,9 +21,10 @@ import pageObjects.WelcomePage;
 import pageObjects.WhatsNew_ItemPage;
 import pageObjects.WhatsNew_MainPage;
 import testComponents.BaseTest;
+import testComponents.Retry;
 
 public class EndToEnd_PlaceOrderTest  extends BaseTest{
-	@Test (dataProvider="getRandomData")
+	@Test (dataProvider="getRandomData",retryAnalyzer=Retry.class)
 	public void Order_Placement(HashMap<String,String> input) throws InterruptedException, IOException 
 	{
 		

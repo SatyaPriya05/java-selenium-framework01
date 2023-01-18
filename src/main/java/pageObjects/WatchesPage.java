@@ -43,11 +43,15 @@ public class WatchesPage extends AbstractComponent {
 	
 	public void select_PriceFilter() 
 	{
+		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+		wait.until(ExpectedConditions.elementToBeClickable(priceOptions));
 		priceOptions.click();
 		price.click();
 	}
 	public void select_MaterialFilter() 
 	{
+		
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 		wait.until(ExpectedConditions.elementToBeClickable(materialOptions));
 		materialOptions.click();
@@ -60,10 +64,7 @@ public class WatchesPage extends AbstractComponent {
 		
 		JavascriptExecutor js=(JavascriptExecutor)driver;
 	    js.executeScript("window.scrollBy(0,300)");
-		
-		//WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(20));
-		//wait.until(ExpectedConditions.visibilityOfAllElements(watches));
-		
+				
 		WebElement prod= watches.stream().filter(product->
 		product.findElement(By.cssSelector("div.product.details.product-item-details:nth-child(2) strong.product.name.product-item-name > a.product-item-link")).getText().trim().equals(watchName)).findFirst().orElse(null);
 		

@@ -42,7 +42,7 @@ public class WhatsNew_MainPage extends AbstractComponent {
 		   product.findElement(By.cssSelector("div.product-item-details strong.product-item-name > a.product-item-link")).getText().equals(productName)).findFirst().orElse(null);
 			
 		   Actions a= new Actions(driver);
-	    	a.moveToElement(prod).build().perform();
+	       a.moveToElement(prod).build().perform();
 		   prod.findElement(By.cssSelector("button[title='Add to Cart']")).click();
 		
 		return new WhatsNew_ItemPage(driver);

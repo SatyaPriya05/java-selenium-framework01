@@ -62,6 +62,7 @@ public class SelectedPantPage extends AbstractComponent{
 	public CartPage goto_Cart() throws InterruptedException
 	{
 		Thread.sleep(3000);
+		
 		minicart.click();
 		
 		WebElement edit=minicartDrop.findElement(By.xpath("//span[contains(text(),'View and Edit Cart')]"));
