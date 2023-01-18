@@ -18,66 +18,7 @@ import resources.ExtentReporterNG;
 
 public class Listeners  extends BaseTest implements ITestListener
 {
-	@Override
-	public WebDriver initializeDriver() throws IOException {
-		// TODO Auto-generated method stub
-		//return super.initializeDriver();
-	}
-
-	@Override
-	public LandingPage LaunchApplication() throws IOException {
-		// TODO Auto-generated method stub
-		//return super.LaunchApplication();
-	}
-
-	@Override
-	public int Random_Number_Generator() {
-		// TODO Auto-generated method stub
-		//return super.Random_Number_Generator();
-	}
-
-	@Override
-	public String Random_Text() {
-		// TODO Auto-generated method stub
-		//return super.Random_Text();
-	}
-
-	@Override
-	public String getScreenshot(String testCaseName, WebDriver driver) throws IOException {
-		// TODO Auto-generated method stub
-		//return super.getScreenshot(testCaseName, driver);
-	}
-
-	@Override
-	public List<HashMap<String, String>> getJsonDataToMap(String filePath) throws IOException {
-		// TODO Auto-generated method stub
-		//return super.getJsonDataToMap(filePath);
-	}
-
-	@Override
-	public void closeCurrent_and_Refresh() {
-		// TODO Auto-generated method stub
-		//super.closeCurrent_and_Refresh();
-	}
-
-	@Override
-	public LandingPage clickSignOut() {
-		// TODO Auto-generated method stub
-		//return super.clickSignOut();
-	}
-
-	@Override
-	public String logoutMessage() {
-		// TODO Auto-generated method stub
-		//return super.logoutMessage();
-	}
-
-	@Override
-	public void tearDown() {
-		// TODO Auto-generated method stub
-		//super.tearDown();
-	}
-
+	
 	ExtentTest test;
 	ExtentReports extent = ExtentReporterNG.getReportObject();
 	ThreadLocal<ExtentTest> extentTest = new ThreadLocal<ExtentTest>();
