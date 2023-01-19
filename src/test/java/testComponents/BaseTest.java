@@ -44,18 +44,20 @@ public class BaseTest {
 	  Properties prop=new Properties();
 	  FileInputStream fis=new FileInputStream(System.getProperty("user.dir")+File.separator+"src"+File.separator+"main"+File.separator+"java"+File.separator+"resources"+File.separator+"GlobalData.properties");
 	  prop.load(fis);
-	  String browserName=prop.getProperty("browser");
-	  
+	  String browserName=System.getProperty("browser")!=null?System.getProperty("browser"):prop.getProperty("browser");
+	
 	  if(browserName.equalsIgnoreCase("chrome"))
 	  {
 		  WebDriverManager.chromedriver().setup();
 		  driver= new ChromeDriver();
 	  }
+		
 	  else if(browserName.equalsIgnoreCase("firefox"))
 	  {
-		  WebDriverManager.firefoxdriver().setup();
+		  System.setProperty("webdriver.gecko.driver","C:\\Users\\tweety55\\Downloads\\geckodriver-v0.32.0-win-aarch64\\geckodriver.exe");
 		  driver= new FirefoxDriver();
 	  }
+		
 	  else if(browserName.equalsIgnoreCase("edge"))
 	  {
 		  WebDriverManager.edgedriver().setup();
