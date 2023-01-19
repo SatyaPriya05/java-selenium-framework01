@@ -30,8 +30,8 @@ import resources.ExtentReporterNG;
 import testComponents.BaseTest;
 
 public class TryScript3 extends BaseTest {
-	@Test(dataProvider="getCheckout_Detais")
-	public void Submit_Order(HashMap<String,String> input) throws InterruptedException
+	@Test
+	public void Submit_Order() throws InterruptedException
 	{
 		SignInPage signinPage= landingPage.clickSignIn();
 		
@@ -42,54 +42,7 @@ public class TryScript3 extends BaseTest {
 		
 		welcomePage=whatsnewItemPage.openNewTab();
 		
-		WatchesPage watchesPage=welcomePage.goto_Gear_WatchesPage();
-		watchesPage.select_PriceFilter();
-		watchesPage.select_MaterialFilter();
-		this.captureScreenShot(driver,"Filtered_RubberWatches");
-		
-		watchesPage.watch_AddToCart("Endurance Watch");
-		
-		closeCurrent_and_Refresh();
-		
-		PantsPage pantsPage=whatsnewItemPage.navigate_to_Mens_Bottoms_Pants();
-		pantsPage.sort_by_LowPrice();
-		
-		SelectedPantPage selectedPantPage=pantsPage.add_FirstItem_to_Cart();
-		selectedPantPage.select_size_colour();
-		selectedPantPage.Add_To_Cart();
-		
-		CartPage cartPage=selectedPantPage.goto_Cart();
-		//cartPage.Edit_PantQuantity();
-		cartPage.Increase_PantQuantity();
-		cartPage.Assert_Total_CartValue();
-		
-		CheckoutPage checkoutPage=cartPage.Click_Checkout();
-		
-		PaymentPage paymentPage=checkoutPage.Fill_Required_Details(input.get("street"),input.get("city"),input.get("state"),input.get("zip"),input.get("country"),input.get("phone"));
-		String cartItemsTotal=cartPage.get_cartTotal();
-		//PaymentPage paymentPage=new PaymentPage(driver);
-		String orderTotal=paymentPage.get_OrderTotal();
-		Assert.assertEquals(orderTotal, cartItemsTotal);
-		
-		OrderSuccessPage ordersuccessPage=paymentPage.click_PlaceOrder();
-		ordersuccessPage.Validate_SuccessMessage();
-		ordersuccessPage.Validate_OrderId();
-		
-		
 	}
-
-
-@DataProvider
-public Object[][] getCheckout_Detais() throws IOException
-{
-  
-	List<HashMap<String,String>> data = getJsonDataToMap(System.getProperty("user.dir")+"\\src\\test\\java\\Data\\CheckoutDetails.json");
-	return new Object[][] {{data.get(0)}};
-	
-}
-
-
-
 
 }
 
