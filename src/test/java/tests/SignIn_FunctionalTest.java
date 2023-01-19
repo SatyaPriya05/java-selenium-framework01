@@ -1,5 +1,6 @@
 package tests;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
@@ -50,7 +51,7 @@ public class SignIn_FunctionalTest extends BaseTest {
 	public Object[][] get_Valid_SignInData() throws IOException
 	{
 	  
-		List<HashMap<String,String>> data = getJsonDataToMap(System.getProperty("user.dir")+"\\src\\test\\java\\Data\\ValidAccountDetails.json");
+		List<HashMap<String,String>> data = getJsonDataToMap(System.getProperty("user.dir")+File.separator+"src"+File.separator+"test"+File.separator+"java"+File.separator+"Data"+File.separator+"ValidAccountDetails.json");
 		return new Object[][] {{data.get(0)},{data.get(1)},{data.get(2)},{data.get(3)}};
 		
 	}

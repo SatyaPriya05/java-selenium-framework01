@@ -1,5 +1,6 @@
 package tests;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
@@ -61,7 +62,7 @@ public class CreateAccount_FunctionalTest extends BaseTest {
 	public Object[][] get_Invalid_CreateAccountData() throws IOException
 	{
 	  
-		List<HashMap<String,String>> data = getJsonDataToMap(System.getProperty("user.dir")+"\\src\\test\\java\\Data\\CreateAccountErrors.json");
+		List<HashMap<String,String>> data = getJsonDataToMap(System.getProperty("user.dir")+File.separator+"src"+File.separator+"test"+File.separator+"java"+File.separator+"Data"+File.separator+"CreateAccountErrors.json");
 		return new Object[][] {{data.get(0)},{data.get(1)},{data.get(2)},{data.get(3)},{data.get(4)}};
 		
 	}
